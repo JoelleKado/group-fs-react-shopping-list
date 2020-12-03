@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import Header from '../Header/Header';
 
 class App extends Component {
   
@@ -25,9 +26,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="banner-header">
-          <h1>My Shopping List</h1>
-        </header>
+        <Header />
         <main>
           <p>Under Construction...</p>
         </main>
