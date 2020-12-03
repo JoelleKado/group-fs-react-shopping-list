@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import ShoppingList from '../ShoppingList/ShoppingList.js'
 
 class App extends Component {
   
@@ -8,7 +9,13 @@ class App extends Component {
     shoppingList: []
   }
 
-  getStudentList = () => {
+  componentDidMount() {
+    console.log('COPONENT DID MOUNT');
+
+    this.getShoppingList();
+  }
+
+  getShoppingList = () => {
     axios.get('/shopping_list')
     .then((response) => {
       console.log('Response:', response);
@@ -30,6 +37,9 @@ class App extends Component {
         </header>
         <main>
           <p>Under Construction...</p>
+          <h1>
+        <ShoppingList shoppingListProp={this.state.shoppingList}/>
+          </h1>
         </main>
       </div>
     );
