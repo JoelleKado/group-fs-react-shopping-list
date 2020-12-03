@@ -22,6 +22,17 @@ class App extends Component {
       });
   };
 
+  deleteShoppingItem = () => {
+    axios.delete('/shopping_list', {params: {id: id}})
+    .then((response) => {
+      console.log('Response:', response);
+    })
+    .catch((error) => {
+      alert('WHOOPS! Something bad happened!');
+      console.log('Error:', error);
+    });
+  }
+
   render() {
     return (
       <div className='App'>
