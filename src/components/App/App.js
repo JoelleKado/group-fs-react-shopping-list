@@ -2,39 +2,36 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import ShoppingList from '../ShoppingList/ShoppingList.js'
+import Header from '../Header/Header';
 
-class App extends Component {
-  
-  state = {
-    shoppingList: []
-  }
+class App extends Component {  //
+  state = {  
+    shoppingList: [],
+  };
 
-  componentDidMount() {
+  componentDidMount() { 
     console.log('COPONENT DID MOUNT');
 
     this.getShoppingList();
   }
 
-  getShoppingList = () => {
+  getShoppingList = () => {//
     axios.get('/shopping_list')
-    .then((response) => {
+    .then((response) => { 
       console.log('Response:', response);
-      this.setState({
+      this.setState({ 
         shoppingList: response.data
-      })
-    })
-    .catch((error)=> {
-      alert('WHOOPS! Something bad happened!');
-      console.log('Error:', error);
-    })
-}
-  
-  render() {
-    return (
+    })})
+      .catch((error) => { 
+        alert('WHOOPS! Something bad happened!');
+        console.log('Error:', error);
+      });
+    }//end shoppinglist
+    
+  render() {//
+    return (//
       <div className="App">
-        <header className="banner-header">
-          <h1>My Shopping List</h1>
-        </header>
+        <Header />
         <main>
           <p>Under Construction...</p>
           <ul>
@@ -43,7 +40,8 @@ class App extends Component {
         </main>
       </div>
     );
-  }
-}
+  }//end render
 
+}
+  
 export default App;

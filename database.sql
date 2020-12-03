@@ -11,7 +11,7 @@ CREATE TABLE shopping_list (
 
 /*Test Data*/
 INSERT INTO shopping_list (name, quantity, unit)
-VALUES ('grapes', '2', 'lb’);
+VALUES ('grapes', '2', 'lb');
 
 INSERT INTO shopping_list (name, quantity, unit)
-VALUES ('cheese’', '1', 'lb');
+VALUES ( 'cheese', '1', 'lb');
