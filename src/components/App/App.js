@@ -3,29 +3,29 @@ import axios from 'axios';
 import './App.css';
 
 class App extends Component {
-  
   state = {
-    shoppingList: []
-  }
+    shoppingList: [],
+  };
 
   getStudentList = () => {
-    axios.get('/shopping_list')
-    .then((response) => {
-      console.log('Response:', response);
-      this.setState({
-        shoppingList: response.data
+    axios
+      .get('/shopping_list')
+      .then((response) => {
+        console.log('Response:', response);
+        this.setState({
+          shoppingList: response.data,
+        });
       })
-    })
-    .catch((error)=> {
-      alert('WHOOPS! Something bad happened!');
-      console.log('Error:', error);
-    })
-}
-  
+      .catch((error) => {
+        alert('WHOOPS! Something bad happened!');
+        console.log('Error:', error);
+      });
+  };
+
   render() {
     return (
-      <div className="App">
-        <header className="banner-header">
+      <div className='App'>
+        <header className='banner-header'>
           <h1>My Shopping List</h1>
         </header>
         <main>
