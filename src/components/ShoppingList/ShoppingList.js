@@ -15,8 +15,8 @@ class ShoppingList extends Component {
             )
         })} */}
 
-         {this.props.shoppingListProp.map((item, i) => 
-        <li key={i}>
+         {this.props.shoppingListProp.map((item) => 
+        <li key={item.id}>
         {item.name} {item.quantity} {item.unit} {item.purchased}
         </li>)}    
 </>
