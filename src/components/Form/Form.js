@@ -3,15 +3,22 @@ import React, { Component } from 'react';
 
 // class
 class Form extends Component{
+    // state = {
+    //     name: '',
+    //     quantity: '',
+    //     unit: ''
+    // }
 
-    handleChangeFor = (propertyName) => (event) => {
-        this.setState({
-            shoppingList: {
-                ...this.state.shoppingList,
-                [propertyName]: event.target.value,
-            }
-        });
-    }
+
+
+    // handleChangeFor = (propertyName) => (event) => {
+    //     this.setState({
+    //         shoppingList: {
+    //             ...this.state.shoppingList,//this is not correct and needs to be adjusted
+    //             [propertyName]: event.target.value,
+    //         }
+    //     });
+    // }
 
 
     render(){
@@ -35,7 +42,7 @@ class Form extends Component{
                         // value={###SET this value to state which gets emptied}
                         onChange={this.handleChangeFor('quantity')}
                     />
-                    <label>Unit: </label>
+                    <label> Unit: </label>
                     <input
                     type="text"
                     placeholder="lbs/bunch/bundle/oz"
