@@ -37,9 +37,9 @@ class App extends Component {
         </header>
         <main>
           <p>Under Construction...</p>
-          <h1>
+          <ul>
         <ShoppingList shoppingListProp={this.state.shoppingList}/>
-          </h1>
+          </ul>
         </main>
       </div>
     );

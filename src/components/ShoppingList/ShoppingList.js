@@ -9,12 +9,17 @@ class ShoppingList extends Component {
             <p>HI FROM ShoppingList</p>
             {/* <HeroItem/> */}
        
-        {this.props.shoppingListProp.map((item, i) => {
+        {/* {this.props.shoppingListProp.map((item, i) => {
             return (
                 <item key={i}/>
             )
-        })}
- </>
+        })} */}
+
+         {this.props.shoppingListProp.map((item, i) => 
+        <li key={i}>
+        {item.name} {item.quantity} {item.unit} {item.purchased}
+        </li>)}    
+</>
         )
     }
 }
