@@ -51,6 +51,33 @@ router.delete('/:id', (req, res) => {
     });  
 })
 
+//delete route for CLEAR button
+router.delete('/', (req, res) => {
+  let id = req.params.id; // id of the thing to delete
+  console.log('Delete route called with id of', id);
 
+  let queryText = `DELETE * FROM shopping_list;`
+  pool.query(queryText)
+  .then(result => {
+      res.send.Status(201);
+  })
+  .catch(error => {
+      console.log(`Error adding new book`, error);
+     res.sendStatus(500); 
+  });  
+})
+
+//delete route for RESET button
+router.put('/', (req,res) => {
+  let queryText = `UPDATE shopping_list SET purchased=FALSE`
+  pool.query(queryText)
+  .then(result => {
+      res.send.Status(201);
+  })
+  .catch(error => {
+      console.log(`Error adding new book`, error);
+     res.sendStatus(500); 
+  }); 
+})
 
 module.exports = router;
