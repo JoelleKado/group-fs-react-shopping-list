@@ -25,14 +25,29 @@ class App extends Component {  //
       //   purchased: 'lb'
       // }
 
-    ],
+//<<<<<<< HEAD
+     ]}
+// =======
+// <<<<<<< HEAD
+
+// =======
+  handleChangeFor = (propertyName) => (event) => {
+    this.setState({
+      shoppingList: {
+        ...this.state.shoppingList, //this is not correct and needs to be adjusted
+        [propertyName]: event.target.value,
+      },
+    });
+// >>>>>>> master
   };
+// >>>>>>> master
 
+// <<<<<<< HEAD
 
-handleChangeFor = (event) => {
-  console.log('in handleChangeFor');
+// handleChangeFor = (event) => {
+//   console.log('in handleChangeFor');
   
-}
+// }
 
   componentDidMount() {
     console.log('COPONENT DID MOUNT');
@@ -41,6 +56,9 @@ handleChangeFor = (event) => {
   }
 
   getShoppingList = () => {
+// =======
+  // getStudentList = () => {
+// >>>>>>> master
     axios.get('/shopping_list')
       .then((response) => {
         console.log('Response:', response);
@@ -54,7 +72,24 @@ handleChangeFor = (event) => {
       });
   }//end shoppinglist
 
-  render() {//
+// <<<<<<< HEAD
+//   render() {//
+// =======
+  deleteShoppingItem = () => {
+    axios.delete('/shopping_list', {params: {id: id}})
+    .then((response) => {
+      console.log('Response:', response);
+    })
+    .catch((error)=> {
+      alert('WHOOPS!');
+      console.log('Error:', error);
+    })
+    this.getShoppingList();
+  }
+  
+
+  render() {
+// >>>>>>> master
     return (
       <div className='App'>
         <Header />
