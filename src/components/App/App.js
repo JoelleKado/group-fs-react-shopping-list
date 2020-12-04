@@ -4,6 +4,7 @@ import './App.css';
 import ShoppingList from '../ShoppingList/ShoppingList.js';
 import Header from '../Header/Header';
 import Form from '../Form/Form';
+import ShoppingListHeader from '../ShoppingListHeader/ShoppingListHeader';
 
 class App extends Component {
   state = {
@@ -57,6 +58,7 @@ class App extends Component {
     return (
       <div className='App'>
         <Header />
+        <ShoppingListHeader />
         <Form handleChangeFor={this.handleChangeFor} />
         <main>
           <ul>
