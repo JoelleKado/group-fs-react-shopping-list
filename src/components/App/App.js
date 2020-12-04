@@ -9,7 +9,18 @@ class App extends Component {
     shoppingList: [],
   };
 
+<<<<<<< HEAD
 
+=======
+  handleChangeFor = (propertyName) => (event) => {
+    this.setState({
+      shoppingList: {
+        ...this.state.shoppingList, //this is not correct and needs to be adjusted
+        [propertyName]: event.target.value,
+      },
+    });
+  };
+>>>>>>> master
 
   getStudentList = () => {
     axios.get('/shopping_list')
@@ -40,9 +51,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className='App'>
         <Header />
-        <Form />
+        <Form handleChangeFor={this.handleChangeFor} />
         <main>
           <p>Under Construction...</p>
         </main>
