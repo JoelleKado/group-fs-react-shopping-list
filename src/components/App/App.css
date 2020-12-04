@@ -24,8 +24,29 @@
   margin-top: 1.3em;
 }
 
+.form label {
+  font-size: 1.3em;
+  margin: 0.1em;
+}
+
 .saveBtn svg {
-  width: 2.4em;
-  height: 2.4em;
+  width: 2.2em;
+  height: 2.2em;
+  margin: 1em 0.3em;
+  display: block;
+}
+span {
+  text-align: center;
+  display: flex;
+}
+
+span label {
+  margin: 1em 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
   margin: 1em;
+  width: 20%;
 }
