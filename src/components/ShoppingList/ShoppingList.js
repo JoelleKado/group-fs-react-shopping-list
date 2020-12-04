@@ -6,7 +6,6 @@ class ShoppingList extends Component {
     return (
       <>
         <div className='list'>
-          <p>HI FROM ShoppingList</p>
           {this.props.shoppingListProp.map((item) => (
             <li key={item.id}>
               {item.name} {item.quantity} {item.unit} {item.purchased}
