@@ -6,35 +6,34 @@ class Form extends Component {
   render() {
     return (
       <>
-        <div>
+        <div className='form'>
           <h1> Add Item </h1>
           <label>Item: </label>
           <input
             type='text'
             placeholder='Item'
             // value={###SET this value to state which gets emptied}
-            onChange={this.props.handleChangeFor('name')}
+            onChange={(event) => this.props.handleChangeFor(event, 'name')}
           />
-        </div>
-        <div>
           <label>Quantity: </label>
           <input
             type='text'
             placeholder='#'
             // value={###SET this value to state which gets emptied}
-            onChange={this.props.handleChangeFor('quantity')}
+            onChange={(event) => this.props.handleChangeFor(event, 'quantity')}
           />
           <label> Unit: </label>
           <input
             type='text'
             placeholder='lbs/bunch/bundle/oz'
             // value={###SET this value to state which gets emptied}
-            onChange={this.props.handleChangeFor('unit')}
+            onChange={(event) => this.props.handleChangeFor(event, 'unit')}
           />
+          <span role='button' aria-pressed='false' className='saveBtn'>
+            <label>Save Item:</label>
+            <VscSaveAs />
+          </span>
         </div>
-        <span role='button' aria-pressed='false' className='saveBtn'>
-          <VscSaveAs />
-        </span>
       </>
     ); // end return
   } // end render

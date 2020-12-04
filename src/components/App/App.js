@@ -4,7 +4,7 @@ import './App.css';
 import ShoppingList from '../ShoppingList/ShoppingList.js';
 import Header from '../Header/Header';
 import Form from '../Form/Form';
-import ShoppingListHeader from '../ShoppingListHeader/ShoppingListHeader';
+//import ShoppingListHeader from '../ShoppingListHeader/ShoppingListHeader';
 
 class App extends Component {
   state = {
@@ -55,35 +55,35 @@ class App extends Component {
   };
 
   deleteAllItems = () => {
-    axios.delete('/shopping_erase')
-    .then((response)) => {
-    console.log('Response:', response);
-    })
-    .catch((error) => {
-      alert('WHOOPS!');
-      console.log('Error:', error);
-    });
-    this.getShoppingList();
-  }
-
-  resetAllItems = () => {
-    axios.put('/all_false')
-    .then((response)) => {
-      console.log('Response:', response);
+    axios
+      .delete('/shopping_erase')
+      .then((response) => {
+        console.log('Response:', response);
       })
       .catch((error) => {
         alert('WHOOPS!');
         console.log('Error:', error);
       });
-      this.getShoppingList();
-  }
+    this.getShoppingList();
+  };
+
+  resetAllItems = () => {
+    axios
+      .put('/all_false')
+      .then((response) => {
+        console.log('Response:', response);
+      })
+      .catch((error) => {
+        alert('WHOOPS!');
+        console.log('Error:', error);
+      });
+    this.getShoppingList();
+  };
 
   render() {
     return (
       <div className='App'>
         <Header />
-        <ShoppingListHeader />
-        <Form handleChangeFor={this.handleChangeFor} />
         <main>
           <Form handleChangeFor={this.handleChangeFor} />
           <ul>
