@@ -40,7 +40,7 @@ class App extends Component {
       });
   }; //end shoppinglist
 
-  deleteShoppingItem = () => {
+  deleteShoppingItem = (id) => {
     axios
       .delete('/shopping_list', { params: { id: id } })
       .then((response) => {
