@@ -4,7 +4,7 @@ import './App.css';
 import ShoppingList from '../ShoppingList/ShoppingList.js';
 import Header from '../Header/Header';
 import Form from '../Form/Form';
-import ShoppingListHeader from '../ShoppingListHeader/ShoppingListHeader';
+//import ShoppingListHeader from '../ShoppingListHeader/ShoppingListHeader';
 
 class App extends Component {
   state = {
@@ -44,6 +44,32 @@ class App extends Component {
   deleteShoppingItem = (id) => {
     axios
       .delete('/shopping_list', { params: { id: id } })
+      .then((response) => {
+        console.log('Response:', response);
+      })
+      .catch((error) => {
+        alert('WHOOPS!');
+        console.log('Error:', error);
+      });
+    this.getShoppingList();
+  };
+
+  deleteAllItems = () => {
+    axios
+      .delete('/shopping_erase')
+      .then((response) => {
+        console.log('Response:', response);
+      })
+      .catch((error) => {
+        alert('WHOOPS!');
+        console.log('Error:', error);
+      });
+    this.getShoppingList();
+  };
+
+  resetAllItems = () => {
+    axios
+      .put('/all_false')
       .then((response) => {
         console.log('Response:', response);
       })
