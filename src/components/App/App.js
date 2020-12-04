@@ -75,8 +75,8 @@ class App extends Component {  //
 // <<<<<<< HEAD
 //   render() {//
 // =======
-  deleteShoppingItem = () => {
-    axios.delete('/shopping_list, {params: { id: id }}' )
+  deleteShoppingItem = (id) => {
+    axios.delete('/shopping_list,' {params: { id: id }} )
     .then((response) => {
       console.log('Response:', response);
     })
