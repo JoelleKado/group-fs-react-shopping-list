@@ -11,8 +11,21 @@
 }
 
 .list li {
-  border: 1px solid black;
+  border: 2px solid black;
+  border-radius: 1.3em;
+  text-align: center;
   background-color: aqua;
   width: 10em;
   height: 10em;
+  margin: 1em;
+}
+
+.list p {
+  margin-top: 1.3em;
+}
+
+.saveBtn {
+  width: 3.5em;
+  height: 3.5em;
+  margin: 1em;
 }

@@ -8,7 +8,10 @@ class ShoppingList extends Component {
         <div className='list'>
           {this.props.shoppingListProp.map((item) => (
             <li key={item.id}>
-              {item.name} {item.quantity} {item.unit} {item.purchased}
+              <p>{item.name}</p>
+              <p>
+                {item.quantity} {item.unit} {item.purchased}
+              </p>
             </li>
           ))}
         </div>

@@ -1,6 +1,6 @@
 // imports
 import React, { Component } from 'react';
-
+import { VscSaveAs } from 'react-icons/vsc';
 // class
 class Form extends Component {
   render() {
@@ -32,7 +32,9 @@ class Form extends Component {
             onChange={this.props.handleChangeFor('unit')}
           />
         </div>
-        <button>Save</button>
+        <button className='saveBtn'>
+          <VscSaveAs />
+        </button>
       </>
     ); // end return
   } // end render
