@@ -9,9 +9,10 @@ class App extends Component {
     shoppingList: [],
   };
 
+
+
   getStudentList = () => {
-    axios
-      .get('/shopping_list')
+    axios.get('/shopping_list')
       .then((response) => {
         console.log('Response:', response);
         this.setState({
@@ -29,11 +30,13 @@ class App extends Component {
     .then((response) => {
       console.log('Response:', response);
     })
-    .catch((error) => {
-      alert('WHOOPS! Something bad happened!');
+    .catch((error)=> {
+      alert('WHOOPS!');
       console.log('Error:', error);
-    });
+    })
+    this.getShoppingList();
   }
+  
 
   render() {
     return (
