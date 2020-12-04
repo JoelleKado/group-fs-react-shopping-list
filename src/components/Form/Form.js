@@ -32,9 +32,9 @@ class Form extends Component {
             onChange={this.props.handleChangeFor('unit')}
           />
         </div>
-        <button className='saveBtn'>
+        <span role='button' aria-pressed='false' className='saveBtn'>
           <VscSaveAs />
-        </button>
+        </span>
       </>
     ); // end return
   } // end render

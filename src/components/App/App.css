@@ -24,8 +24,8 @@
   margin-top: 1.3em;
 }
 
-.saveBtn {
-  width: 3.5em;
-  height: 3.5em;
+.saveBtn svg {
+  width: 2.4em;
+  height: 2.4em;
   margin: 1em;
 }
