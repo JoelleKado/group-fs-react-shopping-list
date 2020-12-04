@@ -20,8 +20,8 @@ router.get('/', (req, res) => {
 //POST shopping items
 router.post('/', (req, res) => {
   const newItem = req.body;
-  const sqlText = `INSERT INTO students (name, quantity, unit) VALUES ($1, $2, $3)`;
-  pool.query(sqlText, [newItem.name], [newItem.qunatity], [newItem.unit])
+  const sqlText = `INSERT INTO shopping_list (name, quantity, unit) VALUES ($1, $2, $3)`;
+  pool.query(sqlText, [newItem.name], [newItem.quantity], [newItem.unit])
      .then((result) => {
         res.sendStatus(201);
       })
@@ -34,9 +34,9 @@ router.post('/', (req, res) => {
 //Delete shopping item
 router.delete('/:id', (req, res) => {
     let id = req.params.id; // id of the thing to delete
-    console.log('Dete route called with id of', id);
+    console.log('Delete route called with id of', id);
 
-    let queryText = `DELETE FROM shopping_list WHERE id=$1;`
+    let queryText = `DELETE FROM shopping_list WHERE id= ($1);`
     pool.query(queryText, [id])
     
     .then(result => {
@@ -44,10 +44,8 @@ router.delete('/:id', (req, res) => {
     })
     .catch(error => {
         console.log(`Error adding new book`, error);
-       res.setStatus(500); 
-    });
-    
-
+       res.sendStatus(500); 
+    });  
 })
 
 
