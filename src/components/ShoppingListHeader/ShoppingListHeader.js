@@ -7,7 +7,7 @@ class ShoppingListHeader extends Component{
         return(
             <div>
                 <h1>Shopping List</h1>
-                <button>Reset</button>
+                <button >Reset</button>
                 <button>Clear</button>
             </div>
         ) // end return

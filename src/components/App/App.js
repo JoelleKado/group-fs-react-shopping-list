@@ -54,15 +54,36 @@ class App extends Component {
     this.getShoppingList();
   };
 
+  deleteAllItems = () => {
+    axios.delete('/shopping_erase')
+    .then((response)) => {
+    console.log('Response:', response);
+    })
+    .catch((error) => {
+      alert('WHOOPS!');
+      console.log('Error:', error);
+    });
+    this.getShoppingList();
+  }
+
+  resetAllItems = () => {
+    axios.put('/all_false')
+    .then((response)) => {
+      console.log('Response:', response);
+      })
+      .catch((error) => {
+        alert('WHOOPS!');
+        console.log('Error:', error);
+      });
+      this.getShoppingList();
+  }
+
   render() {
     return (
       <div className='App'>
         <Header />
-<<<<<<< HEAD
         <ShoppingListHeader />
         <Form handleChangeFor={this.handleChangeFor} />
-=======
->>>>>>> master
         <main>
           <Form handleChangeFor={this.handleChangeFor} />
           <ul>
