@@ -9,6 +9,9 @@ class App extends Component {
     shoppingList: [],
   };
 
+<<<<<<< HEAD
+
+=======
   handleChangeFor = (propertyName) => (event) => {
     this.setState({
       shoppingList: {
@@ -17,10 +20,10 @@ class App extends Component {
       },
     });
   };
+>>>>>>> master
 
   getStudentList = () => {
-    axios
-      .get('/shopping_list')
+    axios.get('/shopping_list')
       .then((response) => {
         console.log('Response:', response);
         this.setState({
@@ -32,6 +35,19 @@ class App extends Component {
         console.log('Error:', error);
       });
   };
+
+  deleteShoppingItem = () => {
+    axios.delete('/shopping_list', {params: {id: id}})
+    .then((response) => {
+      console.log('Response:', response);
+    })
+    .catch((error)=> {
+      alert('WHOOPS!');
+      console.log('Error:', error);
+    })
+    this.getShoppingList();
+  }
+  
 
   render() {
     return (
