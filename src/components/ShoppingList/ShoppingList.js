@@ -5,12 +5,14 @@ class ShoppingList extends Component {
     console.log('Here is our shopping List', this.props.shoppingListProp);
     return (
       <>
-        <p>HI FROM ShoppingList</p>
-        {this.props.shoppingListProp.map((item) => (
-          <li key={item.id}>
-            {item.name} {item.quantity} {item.unit} {item.purchased}
-          </li>
-        ))}
+        <div className='list'>
+          <p>HI FROM ShoppingList</p>
+          {this.props.shoppingListProp.map((item) => (
+            <li key={item.id}>
+              {item.name} {item.quantity} {item.unit} {item.purchased}
+            </li>
+          ))}
+        </div>
       </>
     );
   }

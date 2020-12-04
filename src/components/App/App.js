@@ -57,8 +57,8 @@ class App extends Component {
     return (
       <div className='App'>
         <Header />
-        <Form handleChangeFor={this.handleChangeFor} />
         <main>
+          <Form handleChangeFor={this.handleChangeFor} />
           <ul>
             <ShoppingList shoppingListProp={this.state.shoppingList} />
           </ul>
