@@ -58,9 +58,13 @@ class App extends Component {
     return (
       <div className='App'>
         <Header />
+<<<<<<< HEAD
         <ShoppingListHeader />
         <Form handleChangeFor={this.handleChangeFor} />
+=======
+>>>>>>> master
         <main>
+          <Form handleChangeFor={this.handleChangeFor} />
           <ul>
             <ShoppingList shoppingListProp={this.state.shoppingList} />
           </ul>
