@@ -16,6 +16,7 @@ router.get('/', (req, res) => {
     });
 });
 
+
 //POST shopping items
 router.post('/', (req, res) => {
   const newItem = req.body;
@@ -29,6 +30,25 @@ router.post('/', (req, res) => {
           res.sendStatus(500);
       })
 });
+
+//Delete shopping item
+router.delete('/:id', (req, res) => {
+    let id = req.params.id; // id of the thing to delete
+    console.log('Dete route called with id of', id);
+
+    let queryText = `DELETE FROM shopping_list WHERE id=$1;`
+    pool.query(queryText, [id])
+    
+    .then(result => {
+        res.send.Status(201);
+    })
+    .catch(error => {
+        console.log(`Error adding new book`, error);
+       res.setStatus(500); 
+    });
+    
+
+})
 
 
 
