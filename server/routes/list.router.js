@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool.js');
 
+const itemList = require('../modules/items.data');
+
+
 // GET shopping items
 router.get('/', (req, res) => {
   const sqlText = `SELECT * FROM shopping_list ORDER BY name ASC`;
